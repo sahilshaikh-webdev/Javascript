@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <ul id="images">
+        <li><img  width="200px" id="photoshop" src="https://graphicdesignjunction.com/wp-content/uploads/2020/12/best-photoshop-tutorials-17.jpg" alt="photoshop"></li>
+        <li><img  width="200px" id="japan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAjetkxmSg9_8XGN3ZMl4NWyDHLXYQxZTh8f6oKJ-BPe3viZUxyw&s=10&ec=72940544" alt="japan img"></li>
+        <li><img  width="200px" id="river" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSHhGTUKt84rrWJXamGYDbgtJqoSXA9mNDxokVF83ErqWPCED1w&s=10&ec=72940544" alt="river img"></li>
+        <li><img  width="200px" id="owl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4B5qkFIkeVWwrRHUX62ZbhdF8goOqvsVMQ8mz3QnwM6Yzy-AGag&s=10&ec=72940544" alt=""></li>
+        <li><img  width="200px" id="prayer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy3P0QpGyh3tQ2eN_W8I-5m2jYBY1OU3G6VROUxv-fnsF4b3mojA&s=10&ec=72940544" alt="prayer img"></li>
+        <li ><a href="https://www.google.com/" id="google" style="color: aliceblue;"    >Google</a></li>
+    </ul>
+
+    <script>
+        // document.getElementById('owl').onclick = function(){
+        //     alert("owl clicked")
+        // } this not best approach
+
+          //attachEvent()
+        // jQuery - on
+        //type, timesStamp, defaultPrevented
+        // target, toElement,  srcElement, currentTarget, 
+        // clientX, clientY, screenX, screenY 
+        // altkey, ctrlkey, shiftkey, keyCode
+        //Event propogation:-event public(bubbelinng means fromm child to parents traverse this is "false" pragpogation) event capture(this occure from parent to child when "true" propogation)
+    
+        // document.getElementById('images').addEventListener('click', function(e){
+        //     console.log("clicked inside the ul")
+        // }, false) // this is best approach
+        // document.getElementById('owl').addEventListener('click', function(e){
+        //     console.log("owl clicked")
+        //     e.stopPropagation()// to stop the propogation or bubbeling
+        // }, false) 
+
+        // document.getElementById('google').addEventListener('click', function(e){
+        //     e.preventDefault();// this is use to preventing the default fucntionality
+        //     e.stopPropagation()
+        //     console.log("google clicked")
+        // })
+
+
+     // write a program to when clicking on the images the clickedd images will be remove
+     
+     
+     document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove();
+        }
+    }, false)
+    
+    // removeIt.parentNode.removeChild(removeIt)
+     
+
+
+    </script>
+</body>
+</html>

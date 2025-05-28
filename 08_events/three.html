@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>code aour javascript</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        
+        const sayDate =  function(str){
+            console.log(str, Date.now());
+        }
+
+        let inetrvalID;
+
+       document.getElementById('start').addEventListener('click', function(){
+       inetrvalID = setInterval(sayDate,1000, "sahil");
+        console.log("start Now") 
+       })
+
+       document.getElementById('stop').addEventListener('click', function(){
+        clearInterval(inetrvalID);
+        console.log("stoped")
+       });
+       
+    </script>
+</body>
+</html>
