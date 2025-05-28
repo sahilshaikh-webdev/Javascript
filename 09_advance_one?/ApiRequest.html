@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            
+        }
+        .card1{
+            width: 300px;
+            height: 200px;
+            background-color: rgb(219, 212, 226);
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .card{
+            width: 300px;
+            height: 200px;
+            background-color: rgb(219, 212, 226);
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>this is the followers and image of hiteshchoudhary</h1>
+
+    <div class="container">
+
+    </div>
+    
+
+
+    <script>
+    const div = document.querySelector('.container');
+    function imageCard(){
+        const imagesDiv = document.createElement('div');
+        imagesDiv.className = 'card'
+        imagesDiv.innerHTML = 'click me to show images'
+        imagesDiv.id = "images"
+        imagesDiv.addEventListener('click', images)
+
+        function images(){
+        if(apiData && apiData.avatar_url){
+        const img = document.createElement('img')
+        img.src = apiData.avatar_url;
+        img.alt = "User Avtar"
+        imagesDiv.innerHTML = '';
+        imagesDiv.appendChild(img)
+        }
+    }
+        div.appendChild(imagesDiv)
+   
+    }
+   
+
+    function followersCard(){
+        const followersDiv = document.createElement('div');
+        followersDiv.className = 'card1'
+        followersDiv.innerHTML = 'click me to show followers'
+        followersDiv.id = "followers"
+        followersDiv.addEventListener('click', followerHitesh)
+
+        function followerHitesh(){
+            
+        if(apiData && followerHitesh){
+            document.createElement('h2')
+            h2.textContent = `${apiData.followers}`;
+            console.log(totalFollowers)
+            totalFollowers.appendChild(totalFollowers)
+        }
+    }
+        div.appendChild(followersDiv);
+    }
+   
+        
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();//The constructor initializes an XMLHttpRequest. It must be called before any other method calls.
+    xhr.open("GET", requestUrl); //Prepare to send a request to get some data from the URL given in requestUrl
+    
+
+    //onreadystatechange helps you wait for the server's response and take action when it's ready
+
+    let apiData = null;
+    
+    xhr.onreadystatechange = function(){
+        // console.log(xhr.readyState);
+
+        if(xhr.readyState === 4 && xhr.status === 200){
+            apiData = JSON.parse(this.responseText) //parse convert data into json format
+            console.log("API data loaded", apiData);
+            imageCard()
+            followersCard()
+           
+        }
+
+       
+
+    }
+    xhr.send() //Now send the request to the server.
+
+
+
+    //photo nikalna hai 
+    // followers nikalna hai 
+    // ek card banaan hai
+    // uspe click karnee pe data ana chahiye
+
+    
+    </script>
+
+</body>
+</html>
+
+
