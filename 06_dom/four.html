@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+
+
+    <script>
+
+        //create the element and add values
+        // function addLanguage(langName){
+        //     const li = document.createElement('li');
+        //     li.innerHTML = `${langName}`
+        //     document.querySelector('.language').appendChild(li)
+
+        // }
+        // addLanguage("Python")
+        // addLanguage("C++")
+
+        function addOptiLanguage (langName){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector(".language").appendChild(li)
+        }
+        addOptiLanguage("Typescript")
+
+        // //Edit the values
+
+        // const secondlang = document.querySelector("li:nth-child(2)");
+        // // secondlang.innerHTML = "halima"
+        // const newLi = document.createElement('li');
+        // newLi.textContent = "swift";
+        // secondlang.replaceWith(newLi)
+
+        // const firstLang = document.querySelector("li:first-child")
+        // firstLang.outerHTML = "<li>Typescript</li>"
+
+
+        // //remove the elements or values 
+
+        // const lastLang = document.querySelector("li:last-child");
+
+        // lastLang.remove();
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
